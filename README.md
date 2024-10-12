@@ -19,6 +19,7 @@ Questa repository raccoglie esempi e spiegazioni pratiche su vari argomenti lega
    - Creazione e gestione di **API** utilizzando l'architettura **REST**.
    - Buone pratiche per la progettazione di API scalabili e sicure.
    - Metodi HTTP principali (GET, POST, PUT, DELETE) e la gestione delle risposte.
+<img width="1138" alt="Screenshot 2024-10-12 alle 13 07 20" src="https://github.com/user-attachments/assets/6b196167-3ea9-4b70-8ef0-c7bc39292e94">
 
 ### 4. Docker
    - Esempi di utilizzo di **Docker** per il deploy di applicazioni in ambienti isolati e portabili.
