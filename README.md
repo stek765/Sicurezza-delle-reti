@@ -39,10 +39,11 @@ Questa repository raccoglie esempi e spiegazioni pratiche su vari argomenti lega
    - Differenze tra crittografia **simmetrica** (es. AES) e **asimmetrica** (es. RSA).
    - Esempi pratici di crittografia con chiavi pubbliche e private.
 
-### 8. Proprietà CIA della Sicurezza
-   - Discussione delle proprietà **CIA**:
-     - **Confidentiality (Confidenzialità)**: Protezione dei dati da accessi non autorizzati.
-     - **Integrity (Integrità)**: Garantire che i dati non vengano alterati durante il trasferimento.
-     - **Availability (Disponibilità)**: Assicurare che i servizi e i dati siano disponibili quando necessario.
+### 8. Proprietà della Crittografia Asimmetrica (RSA)
+   - Discussione delle proprietà garantite dall'algoritmo **RSA**:
+     - **Confidentiality (Confidenzialità)**: RSA assicura la protezione dei dati, consentendo di crittografare i messaggi con la chiave pubblica, garantendo che solo il detentore della chiave privata possa decifrarli.
+     - **Integrity (Integrità)**: RSA può essere utilizzato per garantire che i dati non vengano alterati, tramite l'uso di firme digitali, che verificano che il messaggio non sia stato modificato durante il trasferimento.
+     - **Authentication (Autenticazione)**: RSA permette l'autenticazione tramite la firma digitale, dove il mittente firma il messaggio con la propria chiave privata, permettendo ai destinatari di verificare l'identità del mittente con la chiave pubblica.
+
 
 
