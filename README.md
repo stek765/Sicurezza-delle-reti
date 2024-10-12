@@ -8,6 +8,7 @@ Questa repository raccoglie esempi e spiegazioni pratiche su vari argomenti lega
    - Introduzione ai socket e al loro utilizzo per stabilire comunicazioni tra client e server.
    - Differenze tra **socket TCP** e **socket UDP**.
    - Utilizzo dei **WebSocket** per le comunicazioni real-time via browser.
+     
 <img width="1308" alt="webchat" src="https://github.com/user-attachments/assets/6014e83e-802b-4be4-88fa-7ac52b3056a2">
 
 
