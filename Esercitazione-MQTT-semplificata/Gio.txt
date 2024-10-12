@@ -1,0 +1,107 @@
+Esercizi su pub/sub
+
+
+● Partendo dall’esercizio mostrato nelle istruzioni, cosa succede se pubblico una temperatura
+	prima di aver lanciato il subscriber?
+	
+	Il subscriber non riceve nulla e rimane in ascolto
+	
+● Partendo dall’esercizio mostrato nelle istruzioni creare un’applicazione pub/sub con 2
+	sensori di temperatura relativi a 2 stanze diverse. Quante finestre di terminale devo aprire?
+	
+	Vanno aperte due finestre di terminale per 2 publisher (due stanze --> due sensori) e due 		finestre di terminale per i sub, quindi in totale quattro finestre di terminale
+	
+● Partendo dall’esercizio precedente come fare per avere un unico subscriber per entrambe le
+	temperature? Come si fa a distinguere da quale stanza proviene la temperatura?
+	
+	Per avere un unico subscriber per entrambe le temperature delle due stanze:
+	1) creo una gerarchia dove temperatura è il topic e cucina e soggiorno sono sottotopic di 		   temperatura  
+	2) nel sub faccio la subscribe di temperatura/# e aggiungo nel comando alla fine -v
+	3) in un terminale pubblico la temperatura in temperatura/cucina
+	4) in un altro terminale pubblico la temperatura in temperatura/soggiorno
+	
+	il subscriber riceve entrambe le temperature con di fianco il topic/sottotopic al quale    		appartengono e di conseguenza riesco a capire da quale publisher arriva quale temperatura
+	
+● Prova a pubblicare un valore di umidità relativa (topic “UR”); il subscriber interessato alle
+	temperature lo riceve? Come si fa a creare un subscriber interessato all’umidità? 
+	Costruire un’applicazione pub/sub con 4 finestre per produrre e visualizzare sia valori
+	temperatura sia valori di umidità.
+	
+	- Il subscriber interessato alle temperature non riceve il valore del topic UR
+	- Per fare in modo che il subscriber ricevi il valore dell'umidità deve fare la subscribe del 		  topic UR
+	- Per visualizzare nel sub sia valori di temperatura che di umidità farò una gerarchia così 	  fatta:
+			stanza1 --> stanza1/temperatura , stanza1/UR
+			stanza2 --> stanza2/temperatura , stanza2/UR
+			
+			1° finestra: SUBSCRIBER in ascolto su stanza1/# con -v nel comando
+			2° finestra: SUBSCRIBER in ascolto su stanza2/# con -v nel comando
+			3° finestra: PUBLISHER pubblica valori in stanza1/temperatura e in stanza1/UR
+			4° finestra: PUBLISHER pubblica valori in stanza2/temperatura e in stanza2/UR
+			
+	
+● Aprire e studiare con Wireshark il file PCAP contenuto nello ZIP
+	– Quale protocollo di livello trasporto utilizza MQTT? Quali sono le porte?
+	– Trovare le fasi di publish e subscribe. Quante connessioni TCP apre un subscriber? Quante
+	connessioni TCP apre un publisher?
+	
+	Quale protocollo di livello trasporto utilizza MQTT?
+
+		TCP
+
+	Quali sono le porte?
+
+		Porta 1883 (non sicura)
+		Porta 8883 (sicura tramite SSL/TLS)
+
+	Trovare le fasi di publish e subscribe.
+
+		Subscribe:
+		    Connect Command
+		    Connect Ack
+		    Subscribe Request
+		    Subscribe Ack
+		Publish:
+		    Connect Command
+		    Connect Ack
+		    Publish Message
+
+	Quante connessioni TCP apre un subscriber?
+
+		1 connessione TCP
+
+	Quante connessioni TCP apre un publisher?
+
+		1 connessione TCP per ogni messaggio pubblicato
+
+● Si vuole costruire con MQTT un servizio di messaggistica universitaria
+	– Il rettore può leggere tutti i messaggi
+	– La segreteria può leggere i messaggi dai docenti e dagli studenti
+	– I docenti possono leggere i messaggi dai docenti e dagli studenti
+	– Gli studenti possono leggere solo i messaggi degli altri studenti
+	
+	Costruisco una gerarchia di topic così fatta:
+	
+			messaggi
+			   |
+			   |
+	   docenti_e_studenti
+	   		/	   \
+	   	   /        \
+	   	  /          \
+	  docente      studente 
+	  
+	  A questo punto per ogni personaggio costruisco sia un publisher che un subscriber:
+	  
+	  rettore --> publisher per scrivere messaggi scrive in messaggi
+	  rettore --> subscriber per leggere messaggi in messaggi/#
+	  
+	  segreteria --> publisher per scrivere messaggi scrive in messaggi/docenti_e_studenti
+	  segreteria --> subscriber per leggere messaggi in messaggi/docenti_e_studenti/#
+	  
+	  docente --> publisher per scrivere messaggi scrive in messaggi/docenti_e_studenti
+	  docente --> subscriber per leggere messaggi in messaggi/docenti_e_studenti/#
+	  
+	  studente --> publisher per scrivere messaggi scrive in messaggi/docenti_e_studenti/studente
+	  studente --> subscriber per leggere messaggi in messaggi/docenti_e_studenti/studente/#
+	   
+			    

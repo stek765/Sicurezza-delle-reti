@@ -1,0 +1,4 @@
+Avviando il server web e aprendo la pagina web, è possibile visualizzare lo stesso form visualizzabile nella pagina precedente.
+Eseguendo il metodo POST, quindi cliccando su “Invia” e analizzando la comunicazione con Wireshark, è possibile osservare lo scambio di messaggi tra client e server. In particolare tralasciando i pacchetti del protocollo TCP, è possibile vedere la richiesta POST del client diretta verso il server e la risposta di quest’ultimo con il metodo OK.
+
+È interessante osservare anche come ogni richiesta POST venga stampata sul terminale dal server con una indentazione leggibile. A differenza del metodo GET, il metodo POST non consente di visualizzare i valori direttamente nell’URL, ma solo all’interno della richiesta. Pertanto è necessario uno sniffer per catturare i dati.

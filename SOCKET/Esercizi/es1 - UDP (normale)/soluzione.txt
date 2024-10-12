@@ -1,0 +1,3 @@
+- Lanciando il server e successivamente il client, si osserva che il primo attende la connessione da parte di qualcuno. Quindi, una volta avviato il client, le due parti inizieranno a comunicare.
+
+- Invece avviando prima il client e successivamente il server, allora le due parti non riescono a comunicare. Questo perché il client tenta di raggiungere un host non esistente.

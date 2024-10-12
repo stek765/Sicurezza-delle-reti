@@ -1,0 +1,5 @@
+Avviando il server web e aprendo la pagina web, è possibile visualizzare lo stesso form visualizzabile nella pagina precedente.
+Eseguendo il metodo GET, quindi cliccando su “Invia” e analizzando la comunicazione con Wireshark, è possibile osservare lo scambio di messaggi tra client e server. In particolare, tralasciando i pacchetti del protocollo TCP, è possibile vedere la richiesta GET del client diretta verso il server e la risposta di quest’ultimo con il metodo OK.
+
+È interessante osservare anche come ogni richiesta GET venga stampata sul terminale dal server con una indentazione leggibile. Infine, è possibile notare che nell’URL della pagina web di risposta sono presenti i valori inseriti nel form. Questa è una debolezza del metodo GET che potrebbe essere sfruttata
+in modo malevolo.

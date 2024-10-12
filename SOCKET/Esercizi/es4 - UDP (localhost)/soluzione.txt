@@ -1,0 +1,7 @@
+Modificando il parametro della chiamata a funzione UDPSend nel client viene modificato l’indirizzo del destinatario:
+
+- Inserendo “127.0.0.1” si sta inserendo l’indirizzo privato creato per identificare l'host stesso.
+
+- Inserendo “localhost” si sta utilizzando un alias, pertanto è come scrivere l'indirizzo “127.0.0.1”.
+
+- Inserendo “pippo” si sta provando a identificare l’alias “pippo” a qualche indirizzo. Purtroppo non esiste nessun alias all’interno del sistema operativo con tale valore, tuttavia su Linux (forse anche su Windows) è possibile creare alias di rete con il relativo indirizzo IP.

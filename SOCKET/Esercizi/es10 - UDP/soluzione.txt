@@ -1,0 +1,10 @@
+Si mantengono gli stessi schemi dell'esercizio 8, eseguendo due client A e B. Ricordando di eseguire prima un'operazione del client A, poi un’operazione del client B, poi A, poi B e così via, si ottiene che:
+
+- Nel client B viene letta la somma corretta, ovvero quella eseguita prima che il client B inviasse il valore 0 e richiedesse la terminazione del server.
+
+- Nel client A il valore inserito 1 non viene ricevuto dal server, ma dato che è un protocollo UDP, il client continua ad eseguire il codice. 
+Il problema nel client A sorge nel momento in cui esce dal ciclo do...while, poiché deve attendere una risposta (il risultato) dal server. Tuttavia, dato che il client B ha inviato il valore di terminazione 0 e di conseguenza ha cessato la sua esecuzione, il client A rimarrà in un stato di attesa infinito.
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Ci sono molteplici soluzioni, una tra queste è quella di inserire un ciclo do...while al termine del codice del server e inserendo al suo interno un'attesa di ricezione con il conseguente invio del valore corretto.

@@ -1,0 +1,5 @@
+Modificando il codice e inserendo il numero di porta 100, il server non riesce a essere eseguito per il semplice fatto che la porta 100 fa parte delle well-know port e non può essere utilizzata per altri scopi.
+
+1. Modificando anche il client e inviando il messaggio al localhost con porta 100, il codice viene compilato ed eseguito correttamente. Ovviamente il client rimane in attesa del server.
+
+2. Compilando il server con la modalità sudo è possibile forzare l’ascolto e comunicazione attraverso la porta 100. Di conseguenza il server si metterà in ascolto sulla porta 100 e il client, che eseguirà l’invio su tale porta, riuscirà a trasmettere il messaggio.

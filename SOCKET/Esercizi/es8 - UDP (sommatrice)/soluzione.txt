@@ -1,0 +1,10 @@
+Modifiche client:
+- [Righe 11-16] Viene richiesto l’inserimento di un numero intero all’utente finché tale numero non è diverso da zero. Ogni numero viene inviato al server [Riga 15].
+
+- [Righe 18-21] Nel momento in cui il numero inserito è zero, il programma termina aspettando il risultato che verrà inviato dal server. Alla ricezione, verrà stampato.
+
+
+Modifiche server:
+- [Righe 12-19] Viene dichiarata la variabile somma, come richiesto dall’esercizio. Successivamente, il server attende che qualche client gli invii un valore intero. Una volta arrivato tale informazione, il server somma il valore all’interno di una sua variabile locale. Il ciclo continua finché non riceve un valore pari a zero.
+
+- [Righe 21-24] Quando viene ricevuto un valore pari a zero, il server invia la somma effettuata al client e stampa chi è il client che ha richiesto la terminazione.

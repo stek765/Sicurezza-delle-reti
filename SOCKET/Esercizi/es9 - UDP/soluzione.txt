@@ -1,0 +1,15 @@
+Si parte con il rispondere prima alla domanda e poi a fornire la motivazione. La somma letta non è corretta, motivato nei seguenti punti:
+
+- Il client invia il valore 2345 al server. Quest’ultimo riceve correttamente il valore. Somma progressiva: 2345.
+
+- Il client invia il valore 5187 al server. Quest’ultimo riceve correttamente il valore. Somma progressiva: 2345 + 5187 = 7532.
+
+- Viene staccato il cavo.
+
+- Inserimento del valore 2 all’interno del client. Quest’ultimo invia il pacchetto al localhost, il quale non è collegato alla rete, di conseguenza il pacchetto viene perso. Dato che il protocollo è UDP, il client non sa se il pacchetto è stato ricevuto dal destinatario oppure no, di conseguenza ricomincia il ciclo e richiede un numero intero. La somma nel server rimane 7532, mentre la somma corretta dovrebbe essere 7532 + 2 = 7534.
+
+- Viene riattaccato il cavo.
+
+- Il client invia il valore 1 al server. Quest’ultimo riceve correttamente il valore. Somma progressiva: 7532 + 1 = 7533.
+
+- Valore zero, il client e il server si fermano.
