@@ -8,6 +8,7 @@ Questa repository raccoglie esempi e spiegazioni pratiche su vari argomenti lega
    - Introduzione ai socket e al loro utilizzo per stabilire comunicazioni tra client e server.
    - Differenze tra **socket TCP** e **socket UDP**.
    - Utilizzo dei **WebSocket** per le comunicazioni real-time via browser.
+![Uploading Screenshot 2024-10-12 alle 12.48.52.png…]()
 
 ### 2. Protocolli TCP e UDP
    - Approfondimento sui protocolli di trasporto **TCP** (Transmission Control Protocol) e **UDP** (User Datagram Protocol).
