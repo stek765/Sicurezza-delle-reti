@@ -1,4 +1,5 @@
 # Sicurezza-delle-reti
+![sicurezza_reti](https://github.com/user-attachments/assets/b0a76b50-7a35-47ec-a74c-181813253d0e)
 
 Questa repository raccoglie esempi e spiegazioni pratiche su vari argomenti legati alla sicurezza delle reti, ai protocolli di comunicazione e alle tecnologie utilizzate nell'ambito delle reti e delle applicazioni distribuite. Gli argomenti trattati spaziano dall'uso di socket, alla crittografia, fino alle architetture REST e l'utilizzo di strumenti di analisi di rete come Wireshark.
 
